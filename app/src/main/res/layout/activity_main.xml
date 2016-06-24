@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lod.scordboard.MainActivity"
+    android:background="@color/colorBlueLight">
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="3">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="EQUIPO  A"
+            android:textAllCaps="true"
+            android:textSize="23dp"
+            android:maxLength="25"
+            android:singleLine="true"
+            android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textStyle="bold"
+        android:textSize="80dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:id="@+id/score_left"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="+"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:id="@+id/btn_plus_a"
+                android:onClick="addOneRightA"/>
+
+            <Button
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="-"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:id="@+id/btn_minus_a"
+                android:onClick="removeOneLeftA"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/darker_gray" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:layout_weight="1">
+//CLOCK-------------------------------------------
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="15:00"
+    android:textStyle="bold"
+    android:textSize="65dp"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:id="@+id/timer"
+    android:layout_weight="3"
+    />
+    //BOTONES CLOCK-------------------------------------------
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="vertical"
+    android:layout_weight="10">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5:00"
+            android:textSize="12dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:00"
+            android:textSize="12dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pausar"
+            android:textSize="12dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Empezar"
+            android:textSize="12dp"/>
+
+</LinearLayout>
+</LinearLayout>
+
+    // DIVISOR ------------------------------------------------
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/darker_gray" />
+
+
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:text="Borrar\n contadores"
+        android:textSize="14dp"
+    android:onClick="resetScore"
+    android:layout_gravity="center"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/darker_gray" />
+
+    /////////////////////////////////////////
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="3">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="EQUIPO  B"
+            android:textAllCaps="true"
+            android:textSize="23dp"
+            android:maxLength="25"
+            android:singleLine="true"
+            android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="+"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:id="@+id/btn_plus_b"
+                android:onClick="addOneRightB"/>
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="-"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:id="@+id/btn_minus_b"
+            android:onClick="removeOneLeftB"/>
+            </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="80dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:id="@+id/score_right"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
