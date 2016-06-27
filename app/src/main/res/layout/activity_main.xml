@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.lod.scordboard.MainActivity"
-    android:background="@color/colorBlueLight">
+    android:background="#000000">
 
 
     <LinearLayout
@@ -19,6 +19,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="EQUIPO  A"
+            android:textColorHint="#d1120b"
+            android:textColor="#d1120b"
             android:textAllCaps="true"
             android:textSize="23dp"
             android:maxLength="25"
@@ -36,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
+        android:textColor="#25d10b"
         android:textStyle="bold"
         android:textSize="80dp"
         android:paddingLeft="15dp"
@@ -90,12 +93,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="15:00"
+    android:textColor="#25d10b"
     android:textStyle="bold"
-    android:textSize="65dp"
+    android:textSize="50dp"
     android:gravity="center"
     android:layout_gravity="center"
-    android:id="@+id/timer"
-    android:layout_weight="3"
+    android:id="@+id/mainclock"
+    android:layout_weight="2"
     />
     //BOTONES CLOCK-------------------------------------------
 
@@ -114,15 +118,17 @@
         >
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
             android:text="5:00"
-            android:textSize="12dp"/>
+            android:textSize="12dp"
+            android:onClick="add5"/>
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
             android:text="10:00"
-            android:textSize="12dp"/>
+            android:textSize="12dp"
+            android:onClick="add10"/>
 
     </LinearLayout>
     <LinearLayout
@@ -132,16 +138,16 @@
         android:orientation="horizontal"
         >
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pausar"
-            android:textSize="12dp"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Empezar"
-            android:textSize="12dp"/>
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:src="@android:drawable/ic_media_pause"
+            />
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:src="@android:drawable/ic_media_play"
+            />
 
 </LinearLayout>
 </LinearLayout>
@@ -153,14 +159,83 @@
         android:layout_marginTop="16dp"
         android:background="@android:color/darker_gray" />
 
+    //CLOCK-------------------------------------------
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#25d10b"
+        android:text="00:10"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/secondaryclock"
+        android:layout_weight="1"
+        />
+    //BOTONES CLOCK-------------------------------------------
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="10">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+
+            >
+
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:text="0:30"
+                android:textSize="12dp"
+                android:onClick="add030"/>
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:text="0:10"
+                android:textSize="12dp"
+                android:onClick="add010"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_media_pause"
+                />
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_media_play"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    // DIVISOR ------------------------------------------------
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/darker_gray" />
 
 
     <Button
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="35dp"
     android:gravity="center"
-    android:text="Borrar\n contadores"
-        android:textSize="14dp"
+    android:text="Borrar Puntos"
     android:onClick="resetScore"
     android:layout_gravity="center"
         android:layout_weight="1"/>
@@ -187,6 +262,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="EQUIPO  B"
+            android:textColorHint="#d1120b"
+            android:textColor="#d1120b"
             android:textAllCaps="true"
             android:textSize="23dp"
             android:maxLength="25"
@@ -230,6 +307,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#25d10b"
             android:text="0"
             android:textStyle="bold"
             android:textSize="80dp"
