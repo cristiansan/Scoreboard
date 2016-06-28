@@ -9,8 +9,8 @@ public class MainActivity extends AppCompatActivity {
 
     int scoreLeft = 0;
     int scoreRight = 0;
-    double mainClock = 15.00;
-    double secondaryClock = 10.00;
+    int mainClockMin = 15;
+    int secondaryClockSec = 10;
 
 
     @Override
@@ -56,39 +56,39 @@ public class MainActivity extends AppCompatActivity {
 //MAIN CLOCK -------------------------------------------------------------
 
     public void add5(View v){
-        mainClock =  5.00;
-        mainClock(mainClock);
+        mainClockMin =  5;
+        mainClock(mainClockMin);
     }
 
     public void add10(View v){
-        mainClock = 10.00;
-        mainClock(mainClock);
+        mainClockMin = 10;
+        mainClock(mainClockMin);
 
     }
 
 
-    public void mainClock(double score) {
-        TextView scoreView = (TextView) findViewById(R.id.mainclock);
+    public void mainClock(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.mainClockMin);
         scoreView.setText(String.valueOf(score));
 
     }
 
 //SECONDARY CLOCK -------------------------------------------------------------
     public void add030(View v){
-        secondaryClock = 0.30;
-        secondaryClock(secondaryClock);
+        secondaryClockSec = 30;
+        secondaryClock(secondaryClockSec);
 
     }
 
     public void add010(View v){
-        secondaryClock =  0.10;
-        secondaryClock(secondaryClock);
+        secondaryClockSec = 10;
+        secondaryClock(secondaryClockSec);
 
 
     }
 
-    public void secondaryClock (double score){
-        TextView scoreView = (TextView)findViewById(R.id.secondaryclock);
+    public void secondaryClock (int score){
+        TextView scoreView = (TextView)findViewById(R.id.secondaryClockSec);
         scoreView.setText(String.valueOf(score));
     }
 
@@ -98,12 +98,12 @@ public class MainActivity extends AppCompatActivity {
     public void resetScore(View v) {
         scoreLeft = 0;
         scoreRight = 0;
-        mainClock = 15.00;
-        secondaryClock = 0.10;
+        mainClockMin = 15;
+        secondaryClockSec = 10;
         displayForLeft(scoreLeft);
         displayForRight(scoreRight);
-        mainClock(mainClock);
-        secondaryClock(secondaryClock);
+        mainClock(mainClockMin);
+        secondaryClock(secondaryClockSec);
 
     }
 }
