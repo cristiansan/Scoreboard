@@ -34,13 +34,13 @@ public class MainActivity extends AppCompatActivity{
 
     int scoreLeft = 0;
     int scoreRight = 0;
-    int mainClockMin = 00;
-    int secondaryClockSec = 10;
+    int gameClock = 00;
+    int breakClock = 10;
 
     ImageView btnStart;
     ImageView btnStop;
     TextView textViewTime;
-    TextView textViewTimeMin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +49,17 @@ public class MainActivity extends AppCompatActivity{
 
         btnStart = (ImageView) findViewById(R.id.btnStartTime);
         btnStop = (ImageView) findViewById(R.id.btnStopTime);
-        textViewTime = (TextView) findViewById(R.id.mainClockSec);
+        textViewTime = (TextView) findViewById(R.id.gameClock);
 
-        textViewTime.setText("15:00");
+//GAME CLOCK -------------------------------------------------------------
+
+        textViewTime.setText("07:00");
        /* textViewTimeMin.setText("10:00"); */
-        final CounterClass timer = new CounterClass(900000, 1000);
+        final CounterClass timer = new CounterClass(420000, 1000);
         btnStart.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 timer.start();
             }
         });
@@ -67,7 +68,6 @@ public class MainActivity extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 timer.cancel();
             }
         });
@@ -99,9 +99,11 @@ public class MainActivity extends AppCompatActivity{
             textViewTime.setText("00:00");
         }
 
+
+
     }
 
-//LEFT -------------------------------------------------------------
+//SCORE LEFT -------------------------------------------------------------
 
     public void removeOneLeftA(View v) {
         scoreLeft = scoreLeft - 1;
@@ -119,7 +121,7 @@ public class MainActivity extends AppCompatActivity{
         scoreView.setText(String.valueOf(score));
     }
 
-//RIGHT -------------------------------------------------------------
+//SCORE RIGHT -------------------------------------------------------------
 
     public void removeOneLeftB(View v) {
         scoreRight = scoreRight - 1;
@@ -136,59 +138,51 @@ public class MainActivity extends AppCompatActivity{
         scoreView.setText(String.valueOf(score));
 
     }
-//MAIN CLOCK -------------------------------------------------------------
 
-    public void add5(View v) {
-        mainClockMin = 5;
-        mainClock(mainClockMin);
-    }
 
-    public void add10(View v) {
-        mainClockMin = 10;
-        mainClock(mainClockMin);
+
+    //BREAK CLOCK -------------------------------------------------------------
+    public void add30sec(View v) {
+        breakClock = 30;
+        displayBreakClock(breakClock);
 
     }
 
-
-    public void mainClock(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.mainClockSec);
-        scoreView.setText(String.valueOf(score));
-
-    }
-
-    //SECONDARY CLOCK -------------------------------------------------------------
-    public void add030(View v) {
-        secondaryClockSec = 30;
-        secondaryClock(secondaryClockSec);
+    public void add10sec(View v) {
+        breakClock = 10;
+        displayBreakClock(breakClock);
 
     }
 
-    public void add010(View v) {
-        secondaryClockSec = 10;
-        secondaryClock(secondaryClockSec);
-
+    public void add5sec(View v) {
+        breakClock = 5;
+        displayBreakClock(breakClock);
 
     }
-
-    public void secondaryClock(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.secondaryClockSec);
+    public void displayBreakClock(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.breakClock);
         scoreView.setText(String.valueOf(score));
     }
 
 
-//RESET -------------------------------------------------------------
+//RESET BUTTON-------------------------------------------------------------
 
     public void resetScore(View v) {
         scoreLeft = 0;
         scoreRight = 0;
-        mainClockMin = 15;
-        secondaryClockSec = 10;
+        gameClock = 0000;
+        breakClock = 10;
         displayForLeft(scoreLeft);
         displayForRight(scoreRight);
-        mainClock(mainClockMin);
-        secondaryClock(secondaryClockSec);
+        displayGameClock(gameClock);
+        displayBreakClock(breakClock);
 
     }
+    public void displayGameClock(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.gameClock);
+        scoreView.setText(String.valueOf(score));
+    }
+
 }
 
 

@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Scordboard</string>
+    <string name="app_name">ScoreBoard</string>
+    <string name="clean_scores">Borrar Puntos</string>
+    <string name="team_a">EQUIPO  A</string>
+    <string name="team_b">EQUIPO  B</string>
+
+
 </resources>

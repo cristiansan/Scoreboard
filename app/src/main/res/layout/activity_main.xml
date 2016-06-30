@@ -16,34 +16,38 @@
         android:layout_weight="3">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="EQUIPO  A"
-            android:textColorHint="#d1120b"
-            android:textColor="#d1120b"
+            android:paddingRight="30dp"
+            android:hint="@string/team_a"
+            android:textColorHint="#fc2f28"
+            android:textColor="#fc2f28"
             android:textAllCaps="true"
             android:textSize="23dp"
+            android:textStyle="bold"
             android:maxLength="25"
             android:singleLine="true"
-            android:gravity="center"/>
+            android:gravity="right"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_weight="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="#25d10b"
-        android:textStyle="bold"
-        android:textSize="80dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:id="@+id/score_left"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#25d10b"
+            android:singleLine="true"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="80dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:id="@+id/score_left"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -123,13 +127,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="07:00"
         android:textColor="#25d10b"
         android:textStyle="bold"
-        android:textSize="50dp"
+        android:textSize="60dp"
         android:gravity="center"
         android:layout_gravity="center"
-        android:id="@+id/mainClockSec"
+        android:id="@+id/gameClock"
         />
     </LinearLayout>
     //BOTONES CLOCK-------------------------------------------
@@ -138,8 +142,9 @@
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:orientation="vertical"
+    android:gravity="center"
     android:layout_weight="10">
-    <LinearLayout
+   <!-- <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -161,7 +166,7 @@
             android:textSize="12dp"
             android:onClick="add10"/>
 
-    </LinearLayout>
+    </LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -171,13 +176,15 @@
 
         <ImageView
             android:layout_width="70dp"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:src="@android:drawable/ic_media_pause"
+
+
             android:id="@+id/btnStopTime"
             />
         <ImageView
             android:layout_width="70dp"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:src="@android:drawable/ic_media_play"
             android:id="@+id/btnStartTime"
 
@@ -201,7 +208,7 @@
         android:orientation="horizontal"
         android:layout_weight="1">
 
-    <TextView
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#25d10b"
@@ -222,18 +229,18 @@
             android:textSize="20dp"
             android:gravity="center"
             android:layout_gravity="center"
-            />
+            />-->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#25d10b"
-            android:text="10"
+            android:text="00:10"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="30dp"
             android:gravity="center"
             android:layout_gravity="center"
-            android:id="@+id/secondaryClockSec"
+            android:id="@+id/breakClock"
             />
         </LinearLayout>
     //BOTONES CLOCK-------------------------------------------
@@ -252,18 +259,27 @@
 
             >
 
+
             <Button
                 android:layout_width="70dp"
                 android:layout_height="35dp"
                 android:text="0:30"
                 android:textSize="12dp"
-                android:onClick="add030"/>
+                android:onClick="add30sec"/>
+
             <Button
                 android:layout_width="70dp"
                 android:layout_height="35dp"
                 android:text="0:10"
                 android:textSize="12dp"
-                android:onClick="add010"/>
+                android:onClick="add10sec"/>
+
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:text="0:05"
+                android:textSize="12dp"
+                android:onClick="add5sec"/>
 
         </LinearLayout>
         <LinearLayout
@@ -304,9 +320,10 @@
     android:layout_width="wrap_content"
     android:layout_height="35dp"
     android:gravity="center"
-    android:text="Borrar Puntos"
+    android:text="@string/clean_scores"
     android:onClick="resetScore"
     android:layout_gravity="center"
+        android:singleLine="true"
         android:layout_weight="1"/>
 
 
@@ -328,20 +345,22 @@
         android:layout_weight="3">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="EQUIPO  B"
-            android:textColorHint="#d1120b"
-            android:textColor="#d1120b"
+            android:paddingLeft="30dp"
+            android:hint="@string/team_b"
+            android:textColorHint="#fc2f28"
+            android:textColor="#fc2f28"
             android:textAllCaps="true"
             android:textSize="23dp"
+            android:textStyle="bold"
             android:maxLength="25"
             android:singleLine="true"
-            android:gravity="center"/>
+            android:gravity="left"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_weight="1">
@@ -377,6 +396,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#25d10b"
+            android:singleLine="true"
             android:text="0"
             android:textStyle="bold"
             android:textSize="80dp"
