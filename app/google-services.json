@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "672944493723",
+    "firebase_url": "https://scoreboard-3ffbc.firebaseio.com",
+    "project_id": "scoreboard-3ffbc",
+    "storage_bucket": "scoreboard-3ffbc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672944493723:android:ef9d621bcf29272a",
+        "android_client_info": {
+          "package_name": "com.lod.scoreboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672944493723-a98ti19u6840rhra564chh93lfljmqg6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lod.scoreboard",
+            "certificate_hash": "F1FA786CC024D5D05E765D58F6D5B7AFE2589F23"
+          }
+        },
+        {
+          "client_id": "672944493723-3a6oslosefi01cjj0806ovc5kicrplmq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFPt7L3OA_-qoNmzK7e6ky-FoHSWJ0cVw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672944493723-3a6oslosefi01cjj0806ovc5kicrplmq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

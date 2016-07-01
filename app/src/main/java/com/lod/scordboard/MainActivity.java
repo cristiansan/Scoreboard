@@ -1,35 +1,14 @@
 package com.lod.scordboard;
 
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.media.Image;
+
 import android.media.MediaPlayer;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.lod.scordboard.R;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -41,6 +20,7 @@ public class MainActivity extends AppCompatActivity{
     ImageView btnStart;
     ImageView btnStop;
     TextView textViewTime;
+    private ImageView btnBuzzer;
 
 
     @Override
@@ -50,15 +30,17 @@ public class MainActivity extends AppCompatActivity{
 
         btnStart = (ImageView) findViewById(R.id.btnStartTime);
         btnStop = (ImageView) findViewById(R.id.btnStopTime);
+        btnBuzzer = (ImageView) findViewById(R.id.buzzer);
         textViewTime = (TextView) findViewById(R.id.gameClock);
 
 //BUZZER -----------------------------------------------------------------
-        ImageView one = (ImageView)this.findViewById(R.id.buzzer);
+        ImageView sound = (ImageView)this.findViewById(R.id.buzzer);
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.bikehorn);
-        one.setOnClickListener(new View.OnClickListener(){
+        sound.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v) {
                 mp.start();
+
             }
         });
 
@@ -66,13 +48,13 @@ public class MainActivity extends AppCompatActivity{
 //GAME CLOCK -------------------------------------------------------------
 
         textViewTime.setText("07:00");
-       /* textViewTimeMin.setText("10:00"); */
-        final CounterClass timer = new CounterClass(420000, 1000);
+        final CounterClass timer = new CounterClass(420000, 1000);  // milliseconds
         btnStart.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 timer.start();
+                timer.onFinish();
             }
         });
 
@@ -84,25 +66,31 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        btnBuzzer.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                timer.cancel();
+                mp.start();
+            }
+        });
+
     }
 
     public class CounterClass extends CountDownTimer {
 
         public CounterClass(long millisInFuture, long countDownInterval) {
             super(millisInFuture, countDownInterval);
-            // TODO Auto-generated constructor stub
         }
 
         @Override
         public void onTick(long millisUntilFinished) {
-            // TODO Auto-generated method stub
-
             long millis = millisUntilFinished;
-            String hms = String.format("%02d:%02d",
+            String ms = String.format("%02d:%02d",
                     TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)),
                     TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
-            System.out.println(hms);
-            textViewTime.setText(hms);
+            System.out.println(ms);
+            textViewTime.setText(ms);
         }
 
         @Override
@@ -182,7 +170,7 @@ public class MainActivity extends AppCompatActivity{
     public void resetScore(View v) {
         scoreLeft = 0;
         scoreRight = 0;
-        gameClock = 0000;
+        gameClock = 00;
         breakClock = 10;
         displayForLeft(scoreLeft);
         displayForRight(scoreRight);

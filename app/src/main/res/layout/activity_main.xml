@@ -197,6 +197,7 @@
             android:layout_height="50dp"
             android:src="@android:drawable/ic_lock_silent_mode_off"
             android:id="@+id/buzzer"
+            android:onClick="btnBuzzer"
             />
 
 </LinearLayout>
