@@ -18,7 +18,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingRight="30dp"
+
             android:hint="@string/team_a"
             android:textColorHint="#fc2f28"
             android:textColor="#fc2f28"
@@ -27,12 +27,12 @@
             android:textStyle="bold"
             android:maxLength="25"
             android:singleLine="true"
-            android:gravity="right"/>
+            android:gravity="center"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center"
         android:layout_weight="1">
 
@@ -43,7 +43,7 @@
             android:singleLine="true"
             android:text="0"
             android:textStyle="bold"
-            android:textSize="80dp"
+            android:textSize="100dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:id="@+id/score_left"
@@ -52,29 +52,31 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
+
 
             <Button
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="+"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:id="@+id/btn_plus_a"
-                android:onClick="addOneRightA"/>
-
-            <Button
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_gravity="center"
+                android:layout_gravity="left"
                 android:gravity="center"
                 android:text="-"
                 android:textSize="30dp"
                 android:textStyle="bold"
                 android:id="@+id/btn_minus_a"
                 android:onClick="removeOneLeftA"/>
+
+            <Button
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:text="+"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:id="@+id/btn_plus_a"
+                android:onClick="addOneRightA"/>
 
         </LinearLayout>
 
@@ -172,6 +174,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
+        android:layout_weight="1"
         >
 
         <ImageView
@@ -188,6 +191,12 @@
             android:src="@android:drawable/ic_media_play"
             android:id="@+id/btnStartTime"
 
+            />
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:src="@android:drawable/ic_lock_silent_mode_off"
+            android:id="@+id/buzzer"
             />
 
 </LinearLayout>
@@ -256,26 +265,27 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:orientation="horizontal"
+            android:layout_weight="1"
 
             >
 
 
             <Button
-                android:layout_width="70dp"
+                android:layout_width="50dp"
                 android:layout_height="35dp"
                 android:text="0:30"
                 android:textSize="12dp"
                 android:onClick="add30sec"/>
 
             <Button
-                android:layout_width="70dp"
+                android:layout_width="50dp"
                 android:layout_height="35dp"
                 android:text="0:10"
                 android:textSize="12dp"
                 android:onClick="add10sec"/>
 
             <Button
-                android:layout_width="70dp"
+                android:layout_width="50dp"
                 android:layout_height="35dp"
                 android:text="0:05"
                 android:textSize="12dp"
@@ -287,23 +297,20 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
+            android:layout_weight="1"
             >
 
             <ImageView
                 android:layout_width="60dp"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:src="@android:drawable/ic_media_pause"
                 />
             <ImageView
                 android:layout_width="60dp"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:src="@android:drawable/ic_media_play"
                 />
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_lock_silent_mode_off"
-                />
+
 
         </LinearLayout>
     </LinearLayout>
@@ -347,7 +354,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="30dp"
+
             android:hint="@string/team_b"
             android:textColorHint="#fc2f28"
             android:textColor="#fc2f28"
@@ -356,19 +363,47 @@
             android:textStyle="bold"
             android:maxLength="25"
             android:singleLine="true"
-            android:gravity="left"/>
+            android:gravity="center"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center"
         android:layout_weight="1">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#25d10b"
+                android:singleLine="true"
+                android:text="0"
+                android:textStyle="bold"
+                android:textSize="100dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:id="@+id/score_right"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:id="@+id/btn_minus_b"
+                    android:onClick="removeOneLeftB"/>
 
             <Button
                 android:layout_width="65dp"
@@ -380,29 +415,13 @@
                 android:textStyle="bold"
                 android:id="@+id/btn_plus_b"
                 android:onClick="addOneRightB"/>
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="-"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:id="@+id/btn_minus_b"
-            android:onClick="removeOneLeftB"/>
+
             </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#25d10b"
-            android:singleLine="true"
-            android:text="0"
-            android:textStyle="bold"
-            android:textSize="80dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:id="@+id/score_right"/>
+        </LinearLayout>
+
+
+
 
     </LinearLayout>
 

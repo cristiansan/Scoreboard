@@ -5,6 +5,7 @@ import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -50,6 +51,17 @@ public class MainActivity extends AppCompatActivity{
         btnStart = (ImageView) findViewById(R.id.btnStartTime);
         btnStop = (ImageView) findViewById(R.id.btnStopTime);
         textViewTime = (TextView) findViewById(R.id.gameClock);
+
+//BUZZER -----------------------------------------------------------------
+        ImageView one = (ImageView)this.findViewById(R.id.buzzer);
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.bikehorn);
+        one.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v) {
+                mp.start();
+            }
+        });
+
 
 //GAME CLOCK -------------------------------------------------------------
 
@@ -184,7 +196,3 @@ public class MainActivity extends AppCompatActivity{
     }
 
 }
-
-
-
-
