@@ -56,25 +56,26 @@
 
 
 
-            <Button
+            <ImageView
                 android:layout_width="65dp"
                 android:layout_height="65dp"
                 android:layout_gravity="left"
                 android:gravity="center"
-                android:text="-"
-                android:textSize="30dp"
-                android:textStyle="bold"
+                android:layout_marginRight="2dp"
+                android:src="@drawable/ic_remove_circle_outline_white_48dp"
                 android:id="@+id/btn_minus_a"
                 android:onClick="removeOneLeftA"/>
 
-            <Button
+            <ImageView
                 android:layout_width="65dp"
                 android:layout_height="65dp"
                 android:layout_gravity="right"
+                android:layout_marginLeft="2dp"
                 android:gravity="center"
                 android:text="+"
                 android:textSize="30dp"
                 android:textStyle="bold"
+                android:src="@drawable/ic_add_circle_outline_white_48dp"
                 android:id="@+id/btn_plus_a"
                 android:onClick="addOneRightA"/>
 
@@ -86,7 +87,6 @@
     <View
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
         android:background="@android:color/darker_gray" />
 <LinearLayout
     android:layout_width="wrap_content"
@@ -101,30 +101,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_weight="1">
-<!--<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text=""
-    android:textColor="#25d10b"
-    android:textStyle="bold"
-    android:textSize="50dp"
-    android:gravity="center"
-    android:layout_gravity="center|end"
-    android:id="@+id/mainClockMin"
+        android:layout_weight="2">
 
-    />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="#25d10b"
-            android:textStyle="bold"
-            android:textSize="50dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            />-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -134,41 +112,12 @@
         android:textStyle="bold"
         android:textSize="60dp"
         android:gravity="center"
-        android:layout_gravity="center"
+        android:layout_gravity="center|top"
         android:id="@+id/gameClock"
         />
     </LinearLayout>
     //BOTONES CLOCK-------------------------------------------
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:layout_weight="10">
-   <!-- <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
-
-        >
-
-        <Button
-            android:layout_width="70dp"
-            android:layout_height="35dp"
-            android:text="5:00"
-            android:textSize="12dp"
-            android:onClick="add5"/>
-        <Button
-            android:layout_width="70dp"
-            android:layout_height="35dp"
-            android:text="10:00"
-            android:textSize="12dp"
-            android:onClick="add10"/>
-
-    </LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -180,34 +129,33 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="50dp"
-            android:src="@android:drawable/ic_media_pause"
+            android:src="@drawable/ic_stop_white_48dp"
 
 
             android:id="@+id/btnStopTime"
-            />
+            android:layout_gravity="top" />
         <ImageView
             android:layout_width="70dp"
             android:layout_height="50dp"
-            android:src="@android:drawable/ic_media_play"
+            android:src="@drawable/ic_play_arrow_white_48dp"
             android:id="@+id/btnStartTime"
 
-            />
+            android:layout_gravity="top" />
         <ImageView
             android:layout_width="70dp"
             android:layout_height="50dp"
-            android:src="@android:drawable/ic_lock_silent_mode_off"
+            android:src="@drawable/ic_volume_up_white_48dp"
             android:id="@+id/buzzer"
             android:onClick="btnBuzzer"
-            />
+            android:layout_gravity="top" />
 
-</LinearLayout>
+
 </LinearLayout>
 
     // DIVISOR ------------------------------------------------
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="16dp"
         android:background="@android:color/darker_gray" />
 
     //CLOCK BREAK-------------------------------------------
@@ -218,28 +166,6 @@
         android:orientation="horizontal"
         android:layout_weight="1">
 
-    <!--<TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#25d10b"
-        android:text="00"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:id="@+id/secondaryClockMin"
-        />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#25d10b"
-            android:text=":"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            />-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -247,7 +173,7 @@
             android:textColor="#25d10b"
             android:text="00:10"
             android:textStyle="bold"
-            android:textSize="30dp"
+            android:textSize="25dp"
             android:gravity="center"
             android:layout_gravity="center"
             android:id="@+id/breakClock"
@@ -255,11 +181,13 @@
         </LinearLayout>
     //BOTONES CLOCK-------------------------------------------
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="10">
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center"
+            android:text="02:00"
+            android:textSize="12dp"
+            android:onClick="add30sec"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -267,7 +195,6 @@
             android:layout_gravity="center"
             android:orientation="horizontal"
             android:layout_weight="1"
-
             >
 
 
@@ -304,23 +231,21 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="35dp"
-                android:src="@android:drawable/ic_media_pause"
+                android:src="@drawable/ic_pause_white_48dp"
                 />
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="35dp"
-                android:src="@android:drawable/ic_media_play"
+                android:src="@drawable/ic_play_arrow_white_48dp"
                 />
 
-
         </LinearLayout>
-    </LinearLayout>
+
 
     // DIVISOR ------------------------------------------------
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="16dp"
         android:background="@android:color/darker_gray" />
 
 
@@ -330,7 +255,7 @@
     android:gravity="center"
     android:text="@string/clean_scores"
     android:onClick="resetScore"
-    android:layout_gravity="center"
+    android:layout_gravity="center|bottom"
         android:singleLine="true"
         android:layout_weight="1"/>
 
@@ -339,7 +264,6 @@
     <View
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
         android:background="@android:color/darker_gray" />
 
     /////////////////////////////////////////
@@ -395,22 +319,23 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <Button
+                <ImageView
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:layout_gravity="center"
+                    android:layout_marginRight="2dp"
                     android:gravity="center"
-                    android:text="-"
-                    android:textSize="30dp"
-                    android:textStyle="bold"
+                    android:src="@drawable/ic_remove_circle_outline_white_48dp"
                     android:id="@+id/btn_minus_b"
                     android:onClick="removeOneLeftB"/>
 
-            <Button
+            <ImageView
                 android:layout_width="65dp"
                 android:layout_height="65dp"
+                android:src="@drawable/ic_add_circle_outline_white_48dp"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:layout_marginLeft="2dp"
                 android:text="+"
                 android:textSize="30dp"
                 android:textStyle="bold"
